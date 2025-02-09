@@ -349,7 +349,7 @@ class RobustGraphClassifier():
         
     def vote(self, mask):
         G_test = len(self.graphs[mask])
-        idxs = np.array([i for i in range(G_test)])
+        idxs = np.array([i for i in range(len(self.graphs))])
         test_id = idxs[mask]
         
         votes = torch.zeros((G_test,self.num_labels))
