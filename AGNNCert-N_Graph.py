@@ -41,7 +41,7 @@ train_args = {
 print(train_args["dataset"])
 print(train_args["seed"])
 
-graphs,num_x,num_labels,mask_spilt,labels = load_graph_data(dataset)
+graphs,num_x,num_labels,mask_spilt,labels =  load_graph_data(dataset,num_train=num_train,num_val=num_val)
 device =  "cuda" if torch.cuda.is_available() else "cpu"
 
 from utils import evaluate, store_checkpoint, load_best_model, train_model
